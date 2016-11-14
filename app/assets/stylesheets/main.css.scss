@@ -15,7 +15,6 @@ body {
     margin-bottom: 0;
     overflow: hidden;
     text-align: center;
-    background-color: #c3ff9a;
     background-image: url(/images/back.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -35,7 +34,7 @@ section {
       background-color: #f9f9f9;
     }
     &.section-inverse {
-      background-color: #f5ffeb;
+      background-color: #b7d7d6;
     }
     .subtitle {
       margin-bottom: 24px;
@@ -46,4 +45,18 @@ section {
     }
   }
 }
-/* login */
+
+/* フッター */
+footer {
+  padding: 30px 0;
+  color: #eee;
+  background-color: #333;
+  .copyright {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.panel-top {
+  margin-top: 24px;
+}
