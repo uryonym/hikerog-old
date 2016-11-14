@@ -1,0 +1,49 @@
+body {
+  margin-top: 80px;
+}
+
+/* ナビバー */
+.navbar-nav {
+  float: right;
+}
+
+/* ジャンボトロン */
+.jumbotron {
+  &.hikerog {
+    position: relative;
+    min-height: 530px;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #c3ff9a;
+    background-image: url(/images/back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .outline {
+      margin-top: 180px;
+      background: rgba(236, 236, 236, 0.7);
+    }
+  }
+}
+
+/* セクション */
+section {
+  &.section {
+    padding: 50px 0;
+    &.section-default {
+      background-color: #f9f9f9;
+    }
+    &.section-inverse {
+      background-color: #f5ffeb;
+    }
+    .subtitle {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .top-hikerog {
+      padding-bottom: 30px;
+    }
+  }
+}
+/* login */

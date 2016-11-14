@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  yama_date: 2016-11-05
+  yama_name: MyString
+  weather: MyString
+  member: MyString
+  route: MyText
+  gpslog: MyString
+
+two:
+  user_id: 1
+  yama_date: 2016-11-05
+  yama_name: MyString
+  weather: MyString
+  member: MyString
+  route: MyText
+  gpslog: MyString

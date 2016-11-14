@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">プロフィール編集</h3>
+      </div>
+
+      <div class="panel-body">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { :class => "form-horizontal", method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group">
+            <%= f.label :email, class: 'col-md-3 control-label' %>
+            <div class="col-md-9">
+              <%= f.email_field :email, class: 'form-control', autofocus: true %>
+            </div>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :password, class: 'col-md-3 control-label' %>
+            <!--<i>パスワードを変更しない場合は空白</i>-->
+            <div class="col-md-9">
+              <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+              <% if @minimum_password_length %>
+                <span class="help-block"><%= @minimum_password_length %> 文字以上</span>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, class: 'col-md-3 control-label' %>
+            <div class="col-md-9">
+              <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :current_password, class: 'col-md-3 control-label' %>
+            <div class="col-md-9">
+              <%= f.password_field :current_password, class: 'form-control', autocomplete: "off" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-6 col-md-offset-3">
+              <%= f.submit "更新", class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">アカウント削除</h3>
+      </div>
+
+      <div class="panel-body">
+
+        <%= button_to "削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger', method: :delete %>
+
+      </div>
+    </div>
+  </div>
+</div>

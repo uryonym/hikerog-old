@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  resources :yamalogs
+  devise_for :users
+  root to: 'static_pages#home'
 
   get 'static_pages/help'
 
