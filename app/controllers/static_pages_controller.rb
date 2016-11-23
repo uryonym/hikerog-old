@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @yamalogs = Yamalog.all
-    #render :layout => 'home_layout'
+    render :layout => 'home_layout'
   end
 
   def help

@@ -16,8 +16,20 @@
     background-position: center;
     background-size: cover;
     .outline {
-      margin-top: 180px;
+      margin-top: 60px;
       background: rgba(236, 236, 236, 0.7);
+    }
+    .top-form {
+      margin-top: 110px;
+    }
+    .title {
+      padding: 0 15px;
+      text-align: left;
+      h2 {
+        font-size: 48px;
+        font-weight: bold;
+        //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
     }
   }
 }
