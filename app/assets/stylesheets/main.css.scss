@@ -1,7 +1,3 @@
-body {
-  margin-top: 80px;
-}
-
 /* ナビバー */
 .navbar-nav {
   float: right;
@@ -25,6 +21,14 @@ body {
     }
   }
 }
+
+/* メインコンテンツ */
+main {
+  &.site-content {
+    padding: 25px 0;
+  }
+}
+
 
 /* セクション */
 section {

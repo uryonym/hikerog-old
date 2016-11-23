@@ -1,9 +1,34 @@
 <div class="jumbotron hikerog">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 outline">
+      <div class="col-sm-8 outline">
         <h1>山行記録を投稿しよう</h1>
         <p>あなたが登った山の記録を残して、みんなで共有できます。まずは<%= link_to '登録', new_user_registration_path %>から。</p>
+      </div>
+      <div class="col-sm-4">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "form-horizontal" }) do |f| %>
+          <fieldset>
+            <legend>ログイン</legend>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレス', autofocus: true %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード', autocomplete: "off" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <%= f.submit "ログイン", class: 'btn btn-block btn-primary' %>
+              </div>
+            </div>
+          </fieldset>
+        <% end %>
       </div>
     </div>
   </div>
