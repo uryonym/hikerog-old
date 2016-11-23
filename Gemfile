@@ -36,7 +36,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-twitter'
-gem 'sass-rails', '~> 5.0'
 gem 'honoka-rails', '>= 3.3.6.3'
 
 group :development, :test do
