@@ -1,17 +1,17 @@
 <div class="jumbotron hikerog">
   <div class="container">
-
-    <div class="title">
-      <h2>hikerog</h2>
-    </div>
-
     <div class="row">
-      <div class="col-sm-8 outline">
-        <h1>山行記録を投稿しよう</h1>
-        <p>あなたが登った山の記録を残して、みんなで共有できます。<br />まずは<%= link_to '登録', new_user_registration_path %>から。</p>
+      <div class="col-sm-8">
+        <div class="title">
+          <h2>hikerog</h2>
+        </div>
+        <div class="outline">
+          <h1>hikerogは、hikerのlogを共有する<br />山行記録サービスです。</h1>
+          <p>山行記録を投稿しよう。まずは<%= link_to '登録', new_user_registration_path %>から。</p>
+        </div>
       </div>
-      <div class="col-sm-4 top-form">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "form-horizontal" }) do |f| %>
+      <div class="col-sm-4">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "form-horizontal home-login" }) do |f| %>
           <fieldset>
             <div class="form-group">
               <div class="col-xs-12">
@@ -20,15 +20,21 @@
             </div>
 
             <div class="form-group">
-              <div class="col-xs-8">
+              <div class="col-xs-12">
                 <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード', autocomplete: "off" %>
               </div>
-              <div class="col-xs-4">
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
                 <%= f.submit "ログイン", class: 'btn btn-block btn-success' %>
               </div>
             </div>
           </fieldset>
         <% end %>
+
+        <div class="home-signin">
+          <%= link_to '新規登録', new_user_registration_path, class: 'btn btn-block btn-primary' %>
+        </div>
       </div>
     </div>
   </div>

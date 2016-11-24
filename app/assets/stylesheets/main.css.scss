@@ -3,35 +3,50 @@
   float: right;
 }
 
+
 /* ジャンボトロン */
 .jumbotron {
   &.hikerog {
     position: relative;
-    min-height: 530px;
+    min-height: 450px;
     margin-bottom: 0;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     background-image: url(/images/back.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    .outline {
-      margin-top: 60px;
-      background: rgba(236, 236, 236, 0.7);
+    padding: 105px 0;
+    h1 {
+      font-size: 28px;
+      margin: 0;
     }
-    .top-form {
-      margin-top: 110px;
+    p {
+      font-size: 1.0em;
+      margin: 5px 0;
+    }
+    .outline {
+      margin: 62px 0 0 0;
+      padding: 15px;
+      background: rgba(236, 236, 236, 0.7);
+      -webkit-border-radius: 0 15px 0 15px;
+      -moz-border-radius: 0 15px 0 15px;
+      border-radius: 0 15px 0 15px;
     }
     .title {
-      padding: 0 15px;
       text-align: left;
       h2 {
-        font-size: 48px;
+        margin: 0;
+        font-size: 38px;
         font-weight: bold;
         //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
     }
   }
+}
+
+.home-login {
+  margin-bottom: 40px;
 }
 
 /* メインコンテンツ */
