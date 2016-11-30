@@ -1,52 +1,66 @@
+body {
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+}
+
 /* ナビバー */
 .navbar-nav {
   float: right;
 }
 
 
-/* ジャンボトロン */
-.jumbotron {
-  &.hikerog {
-    position: relative;
-    min-height: 450px;
-    margin-bottom: 0;
-    overflow: hidden;
+/* トップページ */
+.hikerog-top {
+  position: relative;
+  min-height: 450px;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-align: left;
+  background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(/images/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  p {
+    font-size: 1.0em;
+    margin: 5px 0;
+  }
+  .outline {
+    margin: 62px 0 0 0;
+    padding: 15px;
+    background: rgba(236, 236, 236, 0.7);
+    -webkit-border-radius: 0 15px 0 15px;
+    -moz-border-radius: 0 15px 0 15px;
+    border-radius: 0 15px 0 15px;
+  }
+  .title {
     text-align: left;
-    background-image: url(/images/back.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 105px 0;
-    h1 {
-      font-size: 28px;
-      margin: 0;
-    }
-    p {
-      font-size: 1.0em;
-      margin: 5px 0;
-    }
-    .outline {
-      margin: 62px 0 0 0;
-      padding: 15px;
-      background: rgba(236, 236, 236, 0.7);
-      -webkit-border-radius: 0 15px 0 15px;
-      -moz-border-radius: 0 15px 0 15px;
-      border-radius: 0 15px 0 15px;
-    }
-    .title {
-      text-align: left;
-      h2 {
-        margin: 0;
-        font-size: 38px;
-        font-weight: bold;
-        //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-    }
   }
 }
 
+.contents-top {
+  padding: 30px 0;
+  h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+}
+
+.catch-copy {
+  margin: 51px 0;
+}
+
+.catch-copy_title {
+  font-size: 36px;
+  line-height: 1.5;
+  font-weight: bold;
+
+}
 .home-login {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+.hikerog-search {
+  text-align: center;
+  margin: 50px 0 20px 0;
 }
 
 /* メインコンテンツ */
