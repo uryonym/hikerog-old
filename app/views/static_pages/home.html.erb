@@ -1,41 +1,35 @@
 <div class="hikerog-top">
 
   <header>
-    <div class="container">
+    <div class="uk-container uk-container-center">
       <h1>hikerog</h1>
     </div>
   </header>
 
   <section class="contents-top">
-    <div class="container">
+    <div class="uk-container uk-container-center">
 
-      <div class="row">
+      <div class="uk-grid">
 
-        <div class="col-sm-8">
+        <div class="uk-width-small-4-6">
           <div class="catch-copy">
             <h2 class="catch-copy_title">hikerogは、hikerのlogを共有できる<br />山行記録サービスです。</h2>
             <p>登った山を記録に残そう。まずは<%= link_to '登録', new_user_registration_path %>から。</p>
           </div>
         </div>
 
-        <div class="col-sm-4">
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "form-horizontal home-login" }) do |f| %>
+        <div class="uk-width-small-2-6">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "uk-form home-login" }) do |f| %>
             <fieldset>
-              <div class="form-group">
-                <div class="col-xs-12">
-                  <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレス', autofocus: true %>
-                </div>
+              <div class="uk-form-row">
+                <%= f.email_field :email, placeholder: 'メールアドレス', class: 'uk-width-1-1', autofocus: true %>
               </div>
-
-              <div class="form-group">
-                <div class="col-xs-12">
-                  <%= f.password_field :password, class: 'form-control', placeholder: 'パスワード', autocomplete: "off" %>
-                </div>
+              <div class="uk-form-row uk-form-password">
+                <%= f.password_field :password, placeholder: 'パスワード',  class: 'uk-width-1-1', autocomplete: "off" %>
+                <a href="" class="uk-form-password-toggle" data-uk-form-password>Show</a>
               </div>
-              <div class="form-group">
-                <div class="col-xs-12">
-                  <%= f.submit "ログイン", class: 'btn btn-block btn-success' %>
-                </div>
+              <div class="uk-form-row">
+                <%= f.button "ログイン", class: 'uk-button uk-button-success uk-width-1-1' %>
               </div>
             </fieldset>
           <% end %>
@@ -75,7 +69,7 @@
 </div>
 
 <section class="section section-inverse yamalog">
-  <div class="container">
+  <div class="uk-container uk-container-center">
     <div class="row">
       <div class="col-xs-12 subtitle">
         <h2>投稿されたハイクログ</h2>

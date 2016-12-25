@@ -1,22 +1,26 @@
-<h1>みんなのヤマログ一覧</h1>
-<p>みんなのヤマログを確認しよう。</p>
+<div class="container hikerog">
 
-<%= form_tag yamalogs_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "検索する", :yama_name => nil %>
-    </p>
-<% end %>
+  <h1>みんなのヤマログ一覧</h1>
+  <p>みんなのヤマログを確認しよう。</p>
 
-<div class="list-group">
-  <% @yamalogs.each do |yamalog| %>
-    <%= link_to(yamalog, class: 'list-group-item') do %>
-      <h4 class="list-group-item-heading">
-        <%= yamalog.yama_name %>
-      </h4>
-      <p class="list-group-item-text">
-        <%= yamalog.yama_date %>
+  <%= form_tag yamalogs_path, :method => 'get' do %> <%#　projects_pathはモデル名で読みかえること %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "検索する", :yama_name => nil %>
       </p>
-    <% end %>
   <% end %>
+
+  <div class="list-group">
+    <% @yamalogs.each do |yamalog| %>
+      <%= link_to(yamalog, class: 'list-group-item') do %>
+        <h4 class="list-group-item-heading">
+          <%= yamalog.yama_name %>
+        </h4>
+        <p class="list-group-item-text">
+          <%= yamalog.yama_date %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>

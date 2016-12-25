@@ -16,9 +16,9 @@ class YamalogsController < ApplicationController
   end
 
   def create
-    @yamalog = current_user.yamalogs.build(yamalog_params)
+    @yamalog = current_user.yamalogs.new(yamalog_params)
     if @yamalog.save
-      redirect_to @yamalog, notice: '作成しました'
+      redirect_to @yamalog, notice: 'はいくログを投稿しました'
     else
       render :new
     end
@@ -26,12 +26,13 @@ class YamalogsController < ApplicationController
 
   def edit
     @yamalog = current_user.yamalogs.find(params[:id])
+    @yamalog.yamalog_pics.build
   end
 
   def update
     @yamalog = current_user.yamalogs.find(params[:id])
     if @yamalog.update(yamalog_params)
-      redirect_to @yamalog, notice: '更新しました'
+      redirect_to @yamalog, notice: 'はいくログを更新しました'
     else
       render :edit
     end
@@ -40,14 +41,14 @@ class YamalogsController < ApplicationController
   def destroy
     @yamalog = current_user.yamalogs.find(params[:id])
     @yamalog.destroy!
-    redirect_to root_path, notice: '削除しました'
+    redirect_to root_path, notice: 'はいくログを削除しました'
   end
 
   private
 
   def yamalog_params
     params.require(:yamalog).permit(
-      :yama_date, :yama_name, :weather, :member, :route, :gpslog
+      :yama_date, :yama_name, :weather, :member, :route, :gpslog, :yamalog_pic
     )
   end
 end

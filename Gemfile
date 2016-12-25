@@ -34,9 +34,11 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'carrierwave'
+gem 'rmagick', require: 'RMagick'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

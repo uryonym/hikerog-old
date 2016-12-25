@@ -7,12 +7,27 @@ body {
   float: right;
 }
 
+.navbar-default {
+  background-color: #88b04b;
+  .navbar-brand {
+    color: #fff;
+  }
+  .navbar-nav {
+    li {
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
 
 /* トップページ */
 .hikerog-top {
   position: relative;
   min-height: 450px;
   margin-bottom: 0;
+  padding-top: 15px;
   overflow: hidden;
   text-align: left;
   background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(/images/back.jpg);
@@ -70,6 +85,13 @@ main {
   }
 }
 
+/* はいくろぐ関連*/
+.container {
+  &.hikerog {
+    margin-top: 50px;
+  }
+}
+
 
 /* セクション */
 section {
@@ -79,7 +101,7 @@ section {
       background-color: #f9f9f9;
     }
     &.section-inverse {
-      background-color: #b7d7d6;
+      background-color: #88b04b;
     }
     .subtitle {
       margin-bottom: 24px;
@@ -104,4 +126,10 @@ footer {
 
 .panel-top {
   margin-top: 24px;
+}
+
+.home-login {
+  .uk-form-password {
+    display: block;
+  }
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105011151) do
+ActiveRecord::Schema.define(version: 20161219134403) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -31,18 +31,30 @@ ActiveRecord::Schema.define(version: 20161105011151) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "yamalog_pics", force: :cascade do |t|
+    t.text     "image",      limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.integer  "yamalog_id", limit: 4
+    t.boolean  "deletepic",                default: false
+  end
+
+  add_index "yamalog_pics", ["yamalog_id"], name: "index_yamalog_pics_on_yamalog_id", using: :btree
+
   create_table "yamalogs", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.date     "yama_date",                null: false
-    t.string   "yama_name",  limit: 255,   null: false
-    t.string   "weather",    limit: 255,   null: false
-    t.string   "member",     limit: 255,   null: false
-    t.text     "route",      limit: 65535, null: false
-    t.string   "gpslog",     limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "user_id",     limit: 4
+    t.date     "yama_date",                 null: false
+    t.string   "yama_name",   limit: 255,   null: false
+    t.string   "weather",     limit: 255,   null: false
+    t.string   "member",      limit: 255,   null: false
+    t.text     "route",       limit: 65535, null: false
+    t.text     "gpslog",      limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "yamalog_pic", limit: 65535
   end
 
   add_index "yamalogs", ["user_id", "yama_name"], name: "index_yamalogs_on_user_id_and_yama_name", using: :btree
 
+  add_foreign_key "yamalog_pics", "yamalogs"
 end
