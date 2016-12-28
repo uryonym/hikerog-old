@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
+    if user_signed_in?
+      redirect_to controller: :yamalogs, action: :index and return
+    end
+
     @yamalogs = Yamalog.all
     render :layout => 'home_layout'
   end

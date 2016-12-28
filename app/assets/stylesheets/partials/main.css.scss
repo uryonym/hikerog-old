@@ -3,22 +3,8 @@ body {
 }
 
 /* ナビバー */
-.navbar-nav {
-  float: right;
-}
-
-.navbar-default {
-  background-color: #88b04b;
-  .navbar-brand {
-    color: #fff;
-  }
-  .navbar-nav {
-    li {
-      a {
-        color: #fff;
-      }
-    }
-  }
+.uk-navbar {
+  background: #abd8a7;
 }
 
 
@@ -101,7 +87,7 @@ section {
       background-color: #f9f9f9;
     }
     &.section-inverse {
-      background-color: #88b04b;
+      background-color: #abd8a7;
     }
     .subtitle {
       margin-bottom: 24px;

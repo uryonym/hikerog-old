@@ -1,31 +1,11 @@
-<header id="navigation">
-  <div class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-      <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
-      <div class="navbar-header">
+<header>
+  <nav class="uk-navbar">
+    <div class="uk-container uk-container-center">
+      <%= link_to 'hikerog', root_path, class: 'uk-navbar-brand' %>
 
-        <!--
-          メニューボタン
-          data-toggle : ボタンを押したときにNavbarを開かせるために必要
-          data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
-        -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      <div class="uk-navbar-flip">
 
-        <!-- タイトルなどのテキスト -->
-        <%= link_to 'hikerog', root_path, class: 'navbar-brand' %>
-      </div>
-
-      <div class="collapse navbar-collapse" id="nav-menu-1">
-
-        <!-- 各ナビゲーションメニュー -->
-        <ul class="nav navbar-nav">
-
-          <!-- 通常のリンク -->
+        <ul class="uk-navbar-nav">
           <li><%= link_to 'ヤマログを探す', yamalogs_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'ヤマログを投稿', new_yamalog_path %></li>
@@ -33,20 +13,21 @@
             <li><%= link_to '新規登録', new_user_registration_path %></li>
           <% end %>
 
-          <!-- ドロップダウンのメニューも配置可能 -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu</a>
-            <ul class="dropdown-menu">
-              <% if user_signed_in? %>
-                <li><%= link_to 'プロフィール編集', edit_user_registration_path %></li>
-                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li><%= link_to 'ログイン', new_user_session_path %></li>
-              <% end %>
-              <li><%= link_to 'お問い合わせ', help_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to 'トップ', root_path %></li>
-            </ul>
+          <li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
+            <a href=>Menu</a>
+            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+              <ul class="uk-nav uk-nav-navbar">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'プロフィール編集', edit_user_registration_path %></li>
+                  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to 'ログイン', new_user_session_path %></li>
+                <% end %>
+                <li><%= link_to 'お問い合わせ', help_path %></li>
+                <li class="uk-nav-divider"></li>
+                <li><%= link_to 'トップ', root_path %></li>
+              </ul>
+            </div>
           </li>
 
         </ul>
@@ -54,5 +35,5 @@
       </div>
 
     </div>
-  </div>
+  </nav>
 </header>

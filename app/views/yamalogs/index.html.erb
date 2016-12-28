@@ -12,14 +12,14 @@
 
   <div class="list-group">
     <% @yamalogs.each do |yamalog| %>
-      <%= link_to(yamalog, class: 'list-group-item') do %>
-        <h4 class="list-group-item-heading">
-          <%= yamalog.yama_name %>
-        </h4>
-        <p class="list-group-item-text">
-          <%= yamalog.yama_date %>
-        </p>
-      <% end %>
+        <div class="uk-width-medium-1-2 uk-width-large-1-3 top-hikerog">
+          <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+            <%= link_to(yamalog) do %>
+                <h3 class="uk-panel-title"><%= yamalog.yama_name %></h3>
+            <% end %>
+            <%= yamalog.yama_date %>
+          </div>
+        </div>
     <% end %>
   </div>
 
