@@ -38,7 +38,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
-#gem 'simple_form'
+gem 'simple_form'
 gem 'bower-rails'
 
 group :development, :test do
