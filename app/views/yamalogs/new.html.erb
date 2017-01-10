@@ -1,71 +1,70 @@
-<div class="uk-container uk-container-center hikerog">
+<% provide :title, "ヤマログ投稿" %>
 
-  <% provide :title, "ヤマログ投稿" %>
+<div class="container">
 
-  <h2>ヤマログを作成</h2>
-  <p>登った山の情報を登録して、みんなに共有しよう。</p>
+  <div class="columns is-mobile">
+    <div class="column is-half is-offset-one-quarter">
 
-  <%= form_for @yamalog, html: {multipart: true, class: 'form-horizontal', wrapper: :horizontal_form} do |f| %>
+      <div class="content">
+        <h2 class="title">ヤマログを作成</h2>
+        <p>登った山の情報を登録して、みんなに共有しよう。</p>
+      </div>
 
-      <div class="form-group">
-        <%= f.label :yama_date, '登山日時', class: 'control-label col-sm-2' %>
-        <div class="col-sm-4">
-          <div class="input-group date datepicker">
-            <%= f.text_field :yama_date, class: 'form-control' %>
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
+      <%= form_for @yamalog, html: {multipart: true, wrapper: :horizontal_form} do |f| %>
+
+        <%= f.label :yama_date, '登山日時', class: 'label' %>
+        <div class="control input-group date datepicker">
+          <%= f.text_field :yama_date, class: 'input' %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
         </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :yama_name, '山名', class: 'control-label col-sm-2' %>
-        <div class="col-sm-4">
-          <%= f.text_field :yama_name, class: 'form-control' %>
+        <%= f.label :yama_name, '山名', class: 'label' %>
+        <div class="control">
+          <%= f.text_field :yama_name, class: 'input' %>
         </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :weather, '天気', class: 'control-label col-sm-2' %>
-        <div class="col-sm-4">
-          <%= f.text_field :weather, class: 'form-control' %>
+        <%= f.label :weather, '天気', class: 'label' %>
+        <div class="control">
+          <%= f.text_field :weather, class: 'input' %>
         </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :member, 'メンバー', class: 'control-label col-sm-2' %>
-        <div class="col-sm-6">
-          <%= f.text_field :member, class: 'form-control' %>
+        <%= f.label :member, 'メンバー', class: 'label' %>
+        <div class="control">
+          <%= f.text_field :member, class: 'input' %>
         </div>
-      </div>
 
-      <div class="form-group">
-        <%= f.label :route, 'ルート', class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.text_area :route, class: 'form-control' %>
+        <%= f.label :route, 'ルート', class: 'label' %>
+        <div class="control">
+          <%= f.text_area :route, class: 'input' %>
         </div>
-      </div>
 
-      <div class="form-group">
-          <%= f.label :yamalog_pic, '写真', class: 'control-label col-sm-2' %>
-          <div class="col-sm-6">
-            <%= f.file_field :yamalog_pic, class: 'form-control' %>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :gpslog, 'GPSログ', class: 'control-label col-sm-2' %>
-        <div class="col-sm-6">
-          <%= f.file_field :gpslog, class: 'form-control' %>
+        <label for="yamalog_pic" class="label">写真</label>
+        <div class="control fileupload">
+          <%= f.file_field :yamalog_pic, class: 'inputfile inputfile-6' %>
+          <%= f.label :yamalog_pic do %>
+            <span></span>
+            <strong>ファイルを選択</strong>
+          <% end %>
         </div>
-      </div>
 
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-4">
-          <%= f.submit "投稿", class: 'btn btn-default' %>
+        <label for="gpslog" class="label">GPSログ</label>
+        <div class="control fieupload">
+          <%= f.file_field :gpslog, class: 'inputfile inputfile-6' %>
+          <%= f.label :gpslog do %>
+            <span></span>
+            <strong>ファイルを選択</strong>
+          <% end %>
         </div>
-      </div>
-  <% end %>
 
+        <div class="control">
+          <%= f.button "投稿", class: 'button is-primary is-outlined' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 </div>
+
+<%= javascript_include_tag 'main' %>

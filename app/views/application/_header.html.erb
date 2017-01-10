@@ -1,11 +1,13 @@
 <header>
-  <nav class="uk-navbar">
-    <div class="uk-container uk-container-center">
-      <%= link_to 'hikerog', root_path, class: 'uk-navbar-brand' %>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <%= link_to 'hikerog', root_path, class: 'nav-item is-brand' %>
+      </div>
 
-      <div class="uk-navbar-flip">
+      <div class="nav-right nav-menu">
 
-        <ul class="uk-navbar-nav">
+        <ul class="nav-item menu-list">
           <li><%= link_to 'ヤマログを探す', yamalogs_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'ヤマログを投稿', new_yamalog_path %></li>
